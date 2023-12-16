@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
-import profilePng from '/images/Profile.png'
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import "./userProfile.css";
 
 import {logout} from "../redux/actions/userAction"
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const UserProfile = () => {
   const dispatch=useDispatch()
@@ -43,9 +40,6 @@ const UserProfile = () => {
               className="text-2xl p-3 hover:drop-shadow-xl bg-light-gray border-[50%]"
               type="button"
               icon={<MdOutlineCancel />}
-              // bgHoverColor="light-gray"
-              // size="2xl"
-              // borderRadius="50%"
             >
               <MdOutlineCancel />
             </button>
@@ -54,9 +48,7 @@ const UserProfile = () => {
           <div className="flex gap-5 items-center mt-2 border-color border-b-1 ">
             <img
               className="rounded-full h-20 w-20"
-              // src={profilePng}
               src={user?.avatar?.url}
-              // src={link }
               alt="user-profile"
             />
             <div>

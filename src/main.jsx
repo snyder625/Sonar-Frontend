@@ -13,18 +13,10 @@ const options = {
   transition: transitions.SCALE,
 }
 
-// export default function Main() {
-
-//   return (
-
-//     <App></App>
-//   );
-// }
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <Main /> */}
       <AlertProvider template={AlertTemplate} {...options}>
         <App />
       </AlertProvider>

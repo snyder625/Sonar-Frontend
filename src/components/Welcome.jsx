@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import imageOne from "/images/b5.jpg";
 import imageTwo from "/images/b4.jpg";

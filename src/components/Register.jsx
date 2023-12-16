@@ -7,7 +7,6 @@ import Loader from './Loader/Loader'
 import { useAlert } from 'react-alert'
 import { clearErrors, register } from '../redux/actions/userAction'
 import { useHistory } from 'react-router-dom'
-import Select from 'react-select'
 import 'react-dropdown/style.css';
 import ProfilePic from  '/images/Profile.png'
 
@@ -31,7 +30,6 @@ const Register = () => {
   const optionss = [
     'user', 'salonowner'
   ];
-  const defaultOptions = optionss[0];
   //   -------------------------
   const registerSubmit = (e) => {
     e.preventDefault()

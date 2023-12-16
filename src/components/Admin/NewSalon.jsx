@@ -1,9 +1,8 @@
-import React, { Fragment, useEffect, useState, useHistory } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import './NewSalon.css'
 import {useSelector, useDispatch } from 'react-redux'
 import { clearErrors, createSalon } from '../../redux/actions/salonAction'
 import { useAlert } from 'react-alert'
-import { Button } from '@material-ui/core'
 // import MetaData from '../layout/MetaData'
 // import AccountTreeIcon from '@material-ui/icons/AccountTree'
 // import DescriptionIcon from '@material-ui/icons/Description'
@@ -14,7 +13,6 @@ import SideBar from './Sidebar'
 import { NEW_SALON_RESET } from '../../redux/constants/salonConstant'
 
 const NewBarber = () => {
-  // const history=useHistory()
     const dispatch = useDispatch()
     const alert = useAlert()
 
@@ -37,7 +35,6 @@ const NewBarber = () => {
     }
     if (success) {
       alert.success('Salon Created Successfully')
-      // history.push('/salonowner/dashboard')
       dispatch({ type: NEW_SALON_RESET })
     }
   }, [dispatch, alert, error, success])
@@ -75,7 +72,7 @@ const NewBarber = () => {
 
 
   return (
-    <Fragment>
+    <>
       <div className="dashboard">
         <SideBar />
         <div className="newProductContainer">
@@ -103,9 +100,8 @@ const NewBarber = () => {
               </label>
             </div>
             <div>
-                <label for="image">Upload Image</label>
-                <input type="file" id="image" 
-                       name="image" value="" required/>
+                <label htmlFor="image">Upload Image</label>
+                <input type="file" id="image" name="image" value="" required/>
             </div>
             <div className="input-container ic2">
               <input
@@ -173,7 +169,7 @@ const NewBarber = () => {
           {/* --------------- */}
         </div>
       </div>
-    </Fragment>
+    </>
   )
 }
 

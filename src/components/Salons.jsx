@@ -1,9 +1,6 @@
-import axios from "axios";
-import React, { useState ,useEffect} from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-//import { getSalonsAsync } from "../redux/salonSlice";
-//import { getAllBarberss } from '../redux/actions/barberAction'
 import { getAllSalons } from "../redux/actions/salonAction";
 import "./Salons.css"
 
@@ -16,43 +13,25 @@ const ShopCard = ({_id, location,  timings, images ,name})=> {
     <div className="my-4 mx-6"
     >
 
-      <div class="card">
-        <div class="card-img">
+      <div className="card">
+        <div className="card-img">
           <img src={images[0].url}></img>
         </div>
-        <div class="card-info">
-          <p class="text-title">{name}</p>
-          <p class="text-body">{location}</p>
-          <p class="text-body">{timings}</p>
+        <div className="card-info">
+          <p className="text-title">{name}</p>
+          <p className="text-body">{location}</p>
+          <p className="text-body">{timings}</p>
           </div>
-          <div class="btn">
-            <a class="fancy" href={`https://ropsten.etherscan.io/address/${location}`}>
-        <span class="top-key"></span>
-        <a class="text">Book Now</a>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
+          <div className="btn">
+            <a className="fancy" href={`https://ropsten.etherscan.io/address/${location}`}>
+        <span className="top-key"></span>
+        <a className="text">Book Now</a>
+        <span className="bottom-key-1"></span>
+        <span className="bottom-key-2"></span>
             </a> 
           </div>
         </div>
   </div>
-      {/*<div className="flex flex-col items-center w-full mt-3">
-        <div className="display-flex justify-start w-full mb-6 p-2">
-          <a href={`https://ropsten.etherscan.io/address/${location}`} target="_blank" rel="noreferrer">
-            <p className="text-white text-base">Location: {location}</p>
-          </a>
-         
-          <p className="text-white text-base">Timings: {timings} ETH</p>
-         
-        </div>
-        <img
-          src={ imagePath}
-          alt="nature"
-          className="w-64 h-32 2xl:h-96 rounded-md shadow-lg object-cover"
-        />
-        <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
-          <p className="text-[#37c7da] font-bold">{name}</p>
-        </div>
-      </div>*/}
     </Link>
   );
 };

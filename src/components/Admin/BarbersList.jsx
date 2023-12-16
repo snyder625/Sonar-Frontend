@@ -16,10 +16,6 @@ const BarbersList = ({ history }) => {
 
   const { error, barbers } = useSelector((state) => state.barbers)
 
-  // const { error: deleteError, isDeleted } = useSelector(
-  //   (state) => state.product,
-  // )
-
   const deleteProductHandler = (id) => {
     // dispatch(deleteProduct(id))
   }
@@ -29,17 +25,6 @@ const BarbersList = ({ history }) => {
       alert.error(error)
       dispatch(clearErrors())
     }
-
-    // if (deleteError) {
-    //   alert.error(deleteError)
-    //   dispatch(clearErrors())
-    // }
-
-    // if (isDeleted) {
-    //   alert.success('Product Deleted Successfully')
-    //   history.push('/admin/dashboard')
-    //   dispatch({ type: DELETE_PRODUCT_RESET })
-    // }
 
     dispatch(getSalonOwnerBarbers())
     // [dispatch, alert, error, deleteError, history, isDeleted]
@@ -86,7 +71,6 @@ const BarbersList = ({ history }) => {
       renderCell: (params) => {
         return (
           <Fragment>
-            {/* <Link to={`/admin/product/${params.getValue(params.id, 'id')}`}> */}
             <Link to={`/admin/product/`}>
               <EditIcon />
             </Link>

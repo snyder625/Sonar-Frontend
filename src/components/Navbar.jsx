@@ -1,13 +1,11 @@
-import React from "react";
+import { useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { BrowserRouter, Link as Link1 } from "react-router-dom";
+import { Link as Link1 } from "react-router-dom";
 import logo from "/images/logooo.png";
-import profilePng from '/images/Profile.png'
 import UserProfile from "./UserProfile";
 import { useSelector } from "react-redux";
-import { useState , useEffect } from "react";
 
 
 const NavBarItem = ({ title,link, classprops }) => (
@@ -17,32 +15,14 @@ const NavBarItem = ({ title,link, classprops }) => (
 
 
 const Navbar = () => {
-  const { user ,error, loading, isAuthenticated } = useSelector((state) => state.user)
+  const { user, isAuthenticated } = useSelector((state) => state.user)
 
-
-  // const [boolLog,setboolLog]= useState(false)
-  // const [name,setName]= useState("")
-  const [link , setLink]=useState("")
-  //const [foundUser,setfoundUser]= useState("")
   const [toggleMenu, setToggleMenu] = useState(false);
   // For User Profile
   const [isClicked, setIsClicked]=useState(false)
   //Modift this array for links of navbar
   const links =["AboutUs","Salons","login","ContactUs"] 
 
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("user");
-  //   if (loggedInUser) {
-  //     const foundUser = JSON.parse(loggedInUser);
-  //     console.log(foundUser)
-  //     setName(foundUser["user"]["name"])
-  //     setLink(foundUser["user"]["avatar"]["url"])
-
-  //     setboolLog(true)
-
-  //   }
-    
-  // }, [isAuthenticated , loading]);
 
   return (
 

@@ -8,7 +8,6 @@ import { Button } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteIcon from '@material-ui/icons/Delete'
 import SideBar from './Sidebar'
-// import { clearErrors, getSalonOwnerBarbers } from '../../redux/actions/barberAction'
 import { clearErrors, getSalonOwnerSalons } from '../../redux/actions/salonAction'
 
 const BarbersList = ({ history }) => {
@@ -16,10 +15,6 @@ const BarbersList = ({ history }) => {
   const alert = useAlert()
 
   const { error, salons } = useSelector((state) => state.salons)
-
-  // const { error: deleteError, isDeleted } = useSelector(
-  //   (state) => state.product,
-  // )
 
   const deleteSalonHandler = (id) => {
     // dispatch(deleteProduct(id))
@@ -30,17 +25,6 @@ const BarbersList = ({ history }) => {
       alert.error(error)
       dispatch(clearErrors())
     }
-
-    // if (deleteError) {
-    //   alert.error(deleteError)
-    //   dispatch(clearErrors())
-    // }
-
-    // if (isDeleted) {
-    //   alert.success('Product Deleted Successfully')
-    //   history.push('/admin/dashboard')
-    //   dispatch({ type: DELETE_PRODUCT_RESET })
-    // }
 
     dispatch(getSalonOwnerSalons())
     // [dispatch, alert, error, deleteError, history, isDeleted]

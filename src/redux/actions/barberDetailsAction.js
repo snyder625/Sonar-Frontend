@@ -7,7 +7,6 @@ export const getAllBarbersDetails = (id) => async(dispatch) => {
         dispatch({ type: ALL_BARBER_DETAILS_REQUEST })
 
        const { data } = await axios.get(`http://localhost:5000/api/barbers/details/${id}`);
-        //const resp = await fetch(`http://localhost:5000/api/barbers/details/${id}`);
         
         dispatch({
             type: ALL_BARBER_DETAILS_SUCCESS,
@@ -26,7 +25,6 @@ export const getAllBarbersUrl = (id) => async(dispatch) => {
         dispatch({ type: ALL_BARBER_URL_REQUEST })
 
        const { data } = await axios.get(`http://localhost:5000/api/barbers/url/${id}`);
-        //const resp = await fetch(`http://localhost:5000/api/barbers/details/${id}`);
         
         dispatch({
             type: ALL_BARBER_URL_SUCCESS,

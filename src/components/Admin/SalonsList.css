@@ -24,7 +24,9 @@
 }
 
 .productListTable div {
-    font: 300 1rem "Roboto";
+    font-weight: 300;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
     color: rgba(0, 0, 0, 0.678);
     border: none !important;
 }
@@ -65,6 +67,6 @@
 
 @media screen and (max-width: 600px) {
     .productListTable div {
-        font: 300 4vw "Roboto";
+        font: 300 4vw "Roboto", sans-serif;
     }
 }

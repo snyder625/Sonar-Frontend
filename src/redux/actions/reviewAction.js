@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ALL_REVIEW_FAIL,ALL_REVIEW_REQUEST,ALL_REVIEW_SUCCESS,CLEAR_ERRORS,CREATE_REVIEW_FAIL,CREATE_REVIEW_REQUEST,CREATE_REVIEW_RESET,CREATE_REVIEW_SUCCESS ,ALL_REVIEW_AVERAGE_FAIL,ALL_REVIEW_AVERAGE_REQUEST,ALL_REVIEW_AVERAGE_SUCCESS } from "../constants/reviewConstant"
+import { ALL_REVIEW_FAIL,ALL_REVIEW_REQUEST,ALL_REVIEW_SUCCESS,CLEAR_ERRORS,CREATE_REVIEW_FAIL,CREATE_REVIEW_REQUEST,CREATE_REVIEW_SUCCESS ,ALL_REVIEW_AVERAGE_FAIL,ALL_REVIEW_AVERAGE_REQUEST,ALL_REVIEW_AVERAGE_SUCCESS } from "../constants/reviewConstant"
 
 
 export const getAllReviews = (id) => async(dispatch) => {
@@ -7,8 +7,6 @@ export const getAllReviews = (id) => async(dispatch) => {
         dispatch({ type: ALL_REVIEW_REQUEST })
         const { data } = await axios.get(`http://localhost:5000/api/reviews/${id}`);
         
-        //const resp = await fetch(`http://localhost:5000/api/appointments/${id}/${name}/${sname}`);
-
         dispatch({
             type: ALL_REVIEW_SUCCESS,
             payload: data,
@@ -25,8 +23,6 @@ export const getAllReviewsAverage = (id) => async(dispatch) => {
       dispatch({ type: ALL_REVIEW_AVERAGE_REQUEST })
       const { data } = await axios.get(`http://localhost:5000/api/reviews/${id}/average`);
       await axios.put(`http://localhost:5000/api/barbers/ratings/${id}`, data)
-
-      //const resp = await fetch(`http://localhost:5000/api/appointments/${id}/${name}/${sname}`);
 
       dispatch({
           type: ALL_REVIEW_AVERAGE_SUCCESS,
@@ -48,12 +44,6 @@ export const createbarberReview = (barberId,customerName, rating,comment) => asy
         type: CREATE_REVIEW_REQUEST,
       })
   
-      /*const config = {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      }*/
-  
       await axios.post(`http://localhost:5000/api/reviews`, barberId,customerName ,rating,comment)
   
       dispatch({
@@ -68,7 +58,7 @@ export const createbarberReview = (barberId,customerName, rating,comment) => asy
             : error.message,
       })
     }
-  }
+}
 
 
 // Clearing Errors

@@ -28,7 +28,7 @@
 .submitReview {
     border: none;
     background-color: tomato;
-    font: 500 0.7vmax "Roboto";
+    font: 500 0.7vmax "Roboto", sans-serif;
     border-radius: 20px;
     padding: 0.6vmax 2vmax;
     margin: 1vmax 0;
@@ -53,12 +53,12 @@
     margin: 1vmax 0;
     outline: none;
     padding: 1rem;
-    font: 300 1rem "Roboto";
+    font: 300 1rem "Roboto", sans-serif;
 }
 
 .reviewsHeading {
     color: #000000be;
-    font: 500 1.4vmax "Roboto";
+    font: 500 1.4vmax "Roboto", sans-serif;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.226);
     padding: 1vmax;
@@ -77,13 +77,11 @@
 
 .reviews {
     display: flex;
-    /* overflow: auto; */
     flex-wrap: wrap;
 }
 
 .reviewCard {
     flex: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
     border: 1px solid rgba(56, 56, 56, 0.116);
     width: 20vmax;
     background-color: #ffff;
@@ -97,7 +95,6 @@
 }
 
 .reviewCard:hover {
-    /* box-shadow: 10px 4px 12px 0px rgba(255, 255, 255, 0.4); */
     transform: translateY(-15%);
 }
 
@@ -108,16 +105,16 @@
 .reviewCard>p {
     margin-top: 8px;
     color: rgba(0, 0, 0, 0.836);
-    font: 600 1.7vmax "Roboto";
+    font: 600 1.7vmax "Roboto", sans-serif;
 }
 
 .reviewCardComment {
     margin-top: 8px;
     color: rgba(0, 0, 0, 0.445);
-    font: 300 1.5vmax cursive;
+    font: 300 1.5vmax cursive, sans-serif;
 }
 
 .noReviews {
-    font: 400 2vmax "Gill Sans";
+    font: 400 2vmax "Gill Sans", sans-serif;
     text-align: center;
 }

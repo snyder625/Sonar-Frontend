@@ -1,12 +1,11 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import MailOutlineIcon from "@material-ui/icons/MailOutline"
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, login } from '../redux/actions/userAction'
 import Loader from "./Loader/Loader"
 import { useAlert } from 'react-alert'
-import { useHistory } from 'react-router-dom'
 
 
 const LogIn = () => {
@@ -48,7 +47,7 @@ const [loginPassword, setLoginPassword] = useState('')
  
 
   return (
-    <Fragment>
+    <>
 
     {
       loading? (
@@ -110,8 +109,7 @@ const [loginPassword, setLoginPassword] = useState('')
         
       }
 
-      </Fragment>
-   
+    </>
   )
 }
   

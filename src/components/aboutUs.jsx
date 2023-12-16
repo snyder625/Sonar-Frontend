@@ -15,7 +15,7 @@ const AboutUs = () => {
                         <h1 className="py-4 text-3xl">FOR BARBERS</h1>
                         <p className="pb-4">More Than Just An Appointment Booking App, It’s Life Made Easy!</p>
                         <p className="pb-2 text-lg font-semibold">Features</p>
-                        <ol class="list-disc lg:px-6">
+                        <ol className="list-disc lg:px-6">
                             <li>Mobile and Web version</li>
                             <li>Reduce No Shows with the reminders feature</li>
                             <li>Get paid for deposits and services using</li>
@@ -45,7 +45,7 @@ const AboutUs = () => {
                         <h1 className="py-4 text-3xl">FOR CLIENTS</h1>
                         <p className="pb-4">More Than Just An Appointment Booking App, It’s Life Made Easy!</p>
                         <p className="pb-2 text-lg font-semibold">Features</p>
-                        <ol class="list-disc px-6">
+                        <ol className="list-disc px-6">
                             <li>Free mobile app</li>
                             <li>Free access from the web to your barbers’ profile</li>
                             <li>Book your appointments, no need to call your barber for</li>

@@ -1,19 +1,9 @@
-import React from "react";
-import { useParams} from "react-router-dom";
-import { useState ,useEffect} from "react";
-import {GoogleMap , withScriptjs , withGoogleMap} from "react-google-maps";
-import { Link } from "react-router-dom";
+import { useEffect} from "react";
+import { Link, useParams} from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllBarberss } from "../redux/actions/barberAction";
 import { getAllSalonDetails ,getAllSalonCoordinates, getAllSalonUrl } from "../redux/actions/salonDetailsAction";
 import TheMap from "./TheMap";
-
-/*function Map(){
-  return (<GoogleMap defaultZoom={10}  defaultCenter={{lat:24.8608, lng : 67.0104}}/>
-  );
-}
-const  WrappedMap = withScriptjs(withGoogleMap(Map));
-*/
 
 const ShopCard1 = (props)=> {
   let text = "/specificBarber/"  + props.id+ "/"+ props.name + "/" +props.sname;
@@ -60,37 +50,19 @@ const SpecificSalon = () => {
 
     const dispatch = useDispatch();
 	  const {salon} = useSelector((state) => state.salon);
-    // const {salon :newSalon}=useSelector((state)=>state.newSalon)
-    // console.log("Salon only : "+salon)
-    // console.log("Salonsssss only : "+salons)
     const {barbers} = useSelector((state) => state.barbers);
     const {coordinates}=useSelector((state)=>state.coordinates)
     const {url}=useSelector((state)=>state.url)
-    //const [imagePath,setImagePath]= useState("")
-
-    //const [lat,setLat]= useState(10);
-    
-    
-
-    //const l1 = salon.coordinates["latitude"] ;
-    //const l2=67.020499918;
 
     const sname= salon.name;
-    
-
 
     useEffect(()=>{
       dispatch(getAllSalonDetails(id));
       dispatch(getAllSalonCoordinates(id));
       dispatch(getAllSalonUrl(id));
       dispatch(getAllBarberss(name));
-      //setImagePath(salon.imagePath.url)
-
-  
-      
-
-
     }, [dispatch,id,name]);
+
     return (
         <div className="gradient-bg-welcome flex w-full justify-center items-center">
         <div className=" m-2 flex flex-1
@@ -134,20 +106,3 @@ const SpecificSalon = () => {
 
 
 export default SpecificSalon;
-    
-
-
-/*
-
-Map code
- <WrappedMap googleMapURL = {`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCLNX0Qokx5Fu3s8kqN1NAp3tABdIr8xzE`}
-            loadingElement = {<div style={{height : "100%"}}/>}
-            containerElement = {<div style={{height : "100%"}}/>}
-            mapElement = {<div style={{height : "100%"}}/>}
-
-
-            />
-
-
-                      
-*/

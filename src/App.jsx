@@ -1,9 +1,6 @@
-import { useState ,useEffect } from 'react'
 import {
   Home,
-  Welcome,
   Footer,
-  Services,
   Salons,
   SpecificSalon,
 } from './components'
@@ -20,18 +17,9 @@ import NewSalon from "./components/Admin/NewSalon"
 import AboutUs from "./components/aboutUs"
 import ContactUs from './components/contactUs'
 import ProtectedRoute from './components/ProtectedRoute'
-import { loadUser } from './redux/actions/userAction'
-// import LoginSignup from './components/LoginSignup'
-import store from './redux/store'
-
-
 
 
 const App = () => {
-  // useEffect(()=>{
-  //   store.dispatch(loadUser())
-  // }, []);
-
   return (
         <Router>
       <div className="gradient-bg-welcome">

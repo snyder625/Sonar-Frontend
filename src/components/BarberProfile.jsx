@@ -1,16 +1,13 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-// import profilePng from '../../images/Profile.png'
 import profilePng from '/images/Profile.png'
 import { useAlert } from 'react-alert'
-import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   clearErrors,
   getAllBarbersDetails,
   getAllBarbersUrl
 } from '../redux/actions/barberDetailsAction'
-import {getAllSalonUrl} from '../redux/actions/salonDetailsAction'
 import { createAppointmentForCustomers, getAllAppointments } from '../redux/actions/appointmentAction'
 import {getAllReviews,createbarberReview ,getAllReviewsAverage} from '../redux/actions/reviewAction'
 import { Rating } from '@material-ui/lab'
@@ -41,16 +38,13 @@ const ReviewCard = ({ review }) => {
 }
 
 const BarberProfile = () => {
-  //const [barber, setbarber]= useState({});
   const { id, name, sname } = useParams()
-  // console.log(id)
   const alert = useAlert()
   const dispatch = useDispatch()
   const [rating, setRating] = useState(0)
-  const [ratings,setRatings]=useState(10);
   const [comment, setComment] = useState('')
   
-  const [barberId,setbarberId] = useState(id)
+  const [barberId, setbarberId] = useState(id)
   const { user } = useSelector((state) => state.user)
   const { barber } = useSelector((state) => state.barber)
 
@@ -66,37 +60,20 @@ const BarberProfile = () => {
   ]
 
   const  {reviews} = useSelector((state) => state.reviews)
-  //const [average,setAverage]=  useState(reviews[2]);
   const { appointments } = useSelector((state) => state.appointments)
-  const {newAppointment, error:appointmentError, success : appointmentSuccess}=useSelector((state)=>state.newAppointment)
-  const { average } = useSelector((state) => state.average)
+  const { error:appointmentError, success : appointmentSuccess}=useSelector((state)=>state.newAppointment)
 
-  const {burl} =useSelector((state) => state.burl)
+  const {burl} = useSelector((state) => state.burl)
 
   const { success:reviewSuccess, error:reviewError } = useSelector(
     (state) => state.newReview,
   )
-    
-  //console.log(`average is `)
-  //const {name}= barber;
-  //console.log("User " +user)
-  //console.log("Barber name "+ barber.name + " User name " +user.name)
-
-  const options = {
-    size: 'large',
-    value: barber?.ratings,
-    readOnly: true,
-    precision: 0.5,
-  }
 
    const appointmentSubmitHandler=(e)=>{
     e.preventDefault()
     setBarberName(barber.name)
     setSalonName(barber.worksAt)
 
-    
-    //
-  
     dispatch(createAppointmentForCustomers({
       customerName,
       name,
@@ -139,9 +116,7 @@ const BarberProfile = () => {
 
     if (appointmentSuccess) {
       alert.success('Appointment Booked Successfully')
-      dispatch({ type: NEW_APPOINTMENT_RESET })
-      
-      // dispatch({ type: CREATE_REVIEW_RESET })
+      dispatch({ type: NEW_APPOINTMENT_RESET })     
     }
 
     dispatch(getAllBarbersDetails(id))
@@ -150,12 +125,10 @@ const BarberProfile = () => {
     dispatch(getAllAppointments(id, name, sname))
     dispatch(getAllReviewsAverage(id))
     dispatch(getAllBarbersUrl(id))
-    //dispatch(getBarbersAverage(id,ratings))
-    //console.log(dispatch(getAllReviewsAverage(id)))
  
     
   }, [dispatch, id, name,sname ,alert, reviewError, reviewSuccess, appointmentError, appointmentSuccess])
-  // console.log(appointments)
+
   return (
     <>
       <div className="gradient-bg-welcome pb-4 flex md:flex-row flex-col w-full justify-center items-center">
@@ -397,16 +370,6 @@ onChange={(e) => setPrice(e.target.value)}>
         </ul>
     </div>
     </div>
-
-
-
-      {/* // ------------ Reviews form */}
-
-      {/*<div className="bg-black pt-12  flex flex-col w-full justify-center items-center py-8">
-        
-            
-          </div>*/}
-
 
       {/* // ----------------- */}
       <div>

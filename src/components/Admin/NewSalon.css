@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
 }
 
 .product_preview {
@@ -42,7 +41,7 @@
 
 .title {
     color: #eee;
-    font: 300 2.5rem "Roboto";
+    font: 300 2.5rem "Roboto", sans-serif;
     text-align: center;
 }
 
@@ -84,7 +83,6 @@
     line-height: 14px;
     pointer-events: none;
     position: absolute;
-    /* transform-origin: 0 25%; */
     transition: transform 200ms, color 200ms;
     top: 20px;
 }
@@ -99,7 +97,6 @@
 }
 
 .input:focus~.placeholder {
-    /* color: #dc2f55; */
     color: #fff;
     font-size: 16px;
 }
@@ -114,7 +111,6 @@
     font-size: 24px;
     height: 50px;
     margin-top: 38px;
-    /* // outline: 0; */
     text-align: center;
     width: 100%;
 }
@@ -122,6 +118,5 @@
 .submit:active {
     background-color: #06b;
 }
-
 
 /* ------------------ */
